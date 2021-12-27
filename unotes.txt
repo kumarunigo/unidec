@@ -1,0 +1,582 @@
+src : source code - text file. human readable/writable
+	code in a file
+	.java extension
+				||
+			COMPILER (JDK = COMPILER & JRE)
+				||
+
+bin : binary code - machine reable format
+
+	JRE = launch/run/execute java program
+	
+	
+Programmer = JDK... source code... convert binary code
+Customers = JRE...
+
+
+procedure oriented programming : C language
+object oriented programming : java c++ csharp
+
+Requirement analysis
+
+Person
+	has-a : hands, legs, mouth, name
+	Does-a : Acitivity/action/behaviours 
+		eat,walk,watch
+		
+		
+	programs : has information.... instructions on how to process information
+	
+OOP - modular/distributed
+	
+BankCustomer : phoneNumber, address,account number, deposit, withdraw, name, balance
+	has-a : phoneNumber, address,accountNumber, name, balance
+	does-a : 
+		despoit
+			balance increases
+	
+		withdraw
+			balance decreases
+			
+public class BankCustomer{
+	int balance=100;
+	String name="john";
+	int ssn;
+	public void withdraw(int amount){
+		balance=balance-amount;
+	}
+	public void deposit(int amount){
+		balance=balance+amount;
+	}
+}
+			
+buyer, person, seller
+
+buyer is-A person
+seller is-A person
+person is-A buyer
+
+Amazon software
+	10 million - PRODUCTS
+
+
+Person
+	has-a : name,shippingaddres,contact,email
+	does-a : changeAddress,Changecontact,updateEmail
+
+Buyer inherits Person
+	has-a : creditcard,
+	does-a : browse, add2Cart,payment,cancelOrder,return,postReviews
+
+
+Seller inherits Person
+	has-a : bankaccount
+	does-a : browse, add2Cart,payment,cancelOrder,return,postReviews,changeAddres,changeCrdit
+
+Product
+	has-a : name,description,reviews, price, offer
+	does-a :  buy,sell,updateQuantity
+
+
+Generalize concept
+
+Address
+	street
+	city
+	state
+	zip
+	country
+	
+	
+	
+
+
+
+
+Buyer - CLASS
+	DATA
+	VARIABLES has-a : name,shippingaddres,contact,email,creditCard,accountActive
+	METHODS does-a : browse, add2Cart,payment,cancelOrder,return,postReviews
+
+	data_type   data_name; // declaration
+	group_of_character name;
+	number contact;
+	
+	name 
+		Primitive data type
+			single character ? char
+			number ? byte,short,int,long
+			fraction number ? float,double
+			yes/no ? boolean
+		
+		Object data type
+			group of character ? YES String
+			complex ?
+		String    name;
+	shippingaddres
+		single character ?
+		number ?
+		fraction number ?
+		yes/no ?
+		group of character ? 
+		Complex information ? YES
+	
+
+Primitive data type
+
+Object data type
+
+
+
+
+
+bankAccount
+	has-a : balance
+	
+public class BankAccount{
+
+	long balance=100;
+}
+Car
+	wheel, engine, fuel, steering
+	
+	Increase speed : 
+
+Variables :
+	What is Variable	
+		container/holds information
+		something that changes : information stored in variable are bound to change
+	Data types
+	Data structure - IS-A , HAS-A
+	Values 
+	Declaration rules
+	Initialization rules
+	Assignment rules
+	Rules on Data
+		Reading data
+		changing data
+	Scope of Data
+		Data that is part of you or defines you - global
+		Data that is provided to you by other - parameter
+		Data that u hold on temprory basis - local
+	Accessing Data
+		Within
+		
+		
+		
+		
+	*********** Declaration rules ***********
+	Declration line includes.... Data type followed by variable name
+	variable cannot be assigned with a value before declaration a data type
+	variable names : same program and same block
+		u cannot have 2 similar variable names
+		can contain alphabets, numbers, $, _
+		start with alphabet or $ or _ 
+		coding practice
+			naming convention - camelCase
+			choose a relevant meaningful names
+	
+		int a=12;
+		// int is data type
+		// a is variable name
+		// 1 is value that variable a holds
+		// = assignment operator
+		// LHS = everthing on left of equal sign
+		// RHS = everthing on right of equal sign
+	
+	
+	values
+		float b=1.0f; // literal value
+		double dd=2.0d;
+		char c='d';
+		boolean d=false;
+		String e1="john";
+		String e2=new String();
+		Address f=new Address(); // refernce value
+		Address shippingAddress_$123;
+		String hihowareyou;
+
+********* important ***********
+// int = data type , x = variable name, 20 = value of variable x
+// = assignment operator
+// RHS = anything that is on the right side of equal sign
+// LHS  = anything that is on the left side of equal sign
+// literal value and reference value (memory address)
+// in-built complex object data type - provided during jdk installation
+String e2=new String();
+// user defined complex object data type - programmer created class
+Address f=new Address();
+
+
+	******** initialization and assignment rules ****
+	Value assigned to a variable for the FIRST time.
+	values should match the data type on LHS
+	RHS can be literal value or variable of same type
+	
+	
+		// LHS primitive data type - RHS can be literal value or variable of same type
+			a=20;
+			a=b;		
+		// LHS object complex data type - RHS can be new operator or variable of same type
+			g=new Address();
+			g=h;
+		// LHS should ALWAYS be a variable	
+			//new Address()=g;
+			//10=a;
+			//"jane"=c;
+		// WHEN using variables on LHS and RHS
+			RHS variable VALUE is OVERWRITTEN on LHS variable
+			
+			
+	
+		
+
+	
+	********* Scope of Data ********* 
+		Data that is part of you or defines you - global
+		Data that is provided to you by other - parameter
+		Data that u hold on temprory basis - local
+		
+		
+	********* Accessing Data ********* 
+		same program : direct access 
+		outside program : accessed with reference to the program using dot operator
+
+
+
+
+
+
+Methods :
+	********* Method Declaration	*********
+		how to recognize methods : Does-A exercise
+		how to code methods :
+			What to name this activity ??? <<NAME>>
+			how many inputs are required ??? what are the data type of each inputs ???
+			how many outputs are required ??? what is the data type of each output ???
+		
+		PUBLIC 	OUTPUT 	NAME	(INPUT)
+	
+	
+		NAME : similar rules as variables
+			Follow camelCase format in method names
+			Alphabets , numbers, $, _ allowed in method names
+	
+		OUTPUT : CAN ALWAYS BE 0 or 1 
+			0 = void  ... 
+				public  void hello(String message)
+			1 = appropriate data type, int/boolean... 
+				public int add(int a, int b)
+			more than 1 = complex or multiple infor to return, create an object data type 
+				public Profile display(String userid)
+				
+		INPUT : CAN ALWAYS BE 0 or MORE 
+			0 = if no input require, leave it empty
+				public int bye(  )
+			More = if more than 1 input , separated by comma. data type followed by the name 
+				public int add(int number1, int number2)
+
+	********* Method Body - logic/ instructions ********* 
+	
+		LOGIC : use control flows and operators for logic.
+		
+		
+		RETURN STATEMENT :
+		
+			if void - no return required
+			if anything but void - return required
+				primitive data type - 
+					literal value that matches output data type 
+						or 
+					variable that matches output data type 
+				Object data type
+					variable that matches output data type 
+					
+					
+	
+Methods : Service
+	********* Method Declaration	*********
+		how to recognize methods : Does-A exercise
+		how to code methods :
+			What to name this activity ??? <<NAME>>
+			how many inputs are required ??? what are the data type of each inputs ???
+			how many outputs are required ??? what is the data type of each output ???
+	
+
+
+Calculator :
+	Does a : add, sub, mult, div
+*************************************** IMPORTANT *******************************	
+	NAME : similar rules as variables
+		Follow camelCase format in method names
+		Alphabets , numbers, $, _ allowed in method names
+
+	OUTPUT : CAN ALWAYS BE 0 or 1 
+		0 = void  ... 
+			public  void hello(String message)
+		1 = appropriate data type, int/boolean/address... 
+			public int add(int a, int b)
+		more than 1 = complex or multiple infor to return, create an object data type 
+			public Profile display(String userid)
+			
+	INPUT : CAN ALWAYS BE 0 or MORE 
+		0 = if no input require, leave it empty
+			public int bye(  )
+		More = if more than 1 input , separated by comma. data type followed by the name 
+			public int add(int number1, int number2)
+
+	
+	What to name this activity ???  calculateSimpleInterest
+	how many inputs are required ??? what is name and data type of each inputs ???  3 input, int principal , byte time, float rate
+	how many outputs are required ??? what is the data type of each output ???  1 output, 
+			1000 X 12 X 4.5 / 100 = 480.35
+
+*************************************** IMPORTANT *******************************
+	PUBLIC 	OUTPUT 	NAME	(INPUT)
+	public	int		calculateSquare	(int sides )
+	public	float		calculateSimpleInterest	(int principal , byte time, float rate )
+	public 	int 		calculateRectangle(int length, int breadth)
+	Design a software service to calculate area of square
+	Design a software service that can calclate banking simple interest
+	area of rectangle
+			
+	
+	What to name this activity ???  login
+	how many inputs are required ??? what is name and data type of each inputs ??? 2, String userid , String password
+	how many outputs are required ??? what is the data type of each output ???  boolean
+	
+	public 	boolean	login(String userid, String password)
+	
+	
+	Application Programming Interface / service / method
+method declaration
+public boolean transferService(String receiverName,int amount){// opening bracket
+	method body/ method definition
+	
+} // closing bracket
+
+
+BankingAtm
+curly bracket. code block.... group of one or more related/relevant code 
+put together
+withdraw{
+	take amount input from customer
+	deduct withdraw amount from bank balance
+}
+deposit{
+	take amount input from customer
+	add depoist amoount to bank balance
+}
+changePin{
+	we will change customers pin
+}
+checkBalance{
+	display customer current bank balance
+}
+						
+						
+					
+
+{
+	{
+		{
+			int a=20; // scope / lifespan
+			{
+				
+			}
+		}
+	}
+}
+variable is created from the line it was declared ... 5
+variable is destroyed - at the closing of current code block... 9
+	look for opening bracket before declaration line {
+	
+	
+Is Java pass by value or pass by reference address
+
+PASS BY VALUE
+However value of complex/object data type is reference address
+
+************* operator **********
+
+Arithmetic operators - number, fraction data type ( int, long, float etc)
+equality operator == - ANY data type
+	a=b // assignment
+	a==b // equality LHS and RHS are equal in values
+	a!=b // LHS and RHS are NOT equal in values
+
+Relational operator - greater or less comparison - number, fraction data type ( int, long, float etc)
+	10 is greater than 5 = true
+
+
+conditional operator
+	&&
+	TRUE AND TRUE = TRUE  , 1 AND 1 = 1
+	TRUE AND FALSE = FALSE, 1 AND 0 = 0
+	FALSE AND TRUE = FALSE
+	FALSE AND FALSE = FALSE
+
+	||
+	TRUE OR TRUE = TRUE
+	TRUE OR FALSE = TRUE
+	FALSE OR TRUE = TRUE
+	FALSE OR FALSE = FALSE
+
+int aa=10;
+int bb=20;
+int cc=30;
+int dd=40;
+(aa>bb) || (cc < dd) ==== true
+FALSE || TRUE
+
+operator Precedence
+
+1) () 
+2) * / %
+3) + -
+4) relational > < 
+5) equality ==
+6) logical && ||
+bodmasrel
+if same level.. go left to right
+
+(4 + 5 * 3 ) > ( 6 + 4 - 3)  && ( 3 * 2 + ( 2+4) ) < 20
+(4 + 15 ) > ( 6 + 4 - 3)  || ( 3 * 2 + ( 2+4) ) < 20
+19 > ( 6 + 4 - 3)  || ( 3 * 2 ( 2+4) ) < 20
+19 > ( 10 - 3)  || ( 3 * 2 + ( 2+4) ) < 20
+19 > 7  || ( 3 * 2 + ( 2+4) ) < 20
+19 > 7  || ( 3 * 2 + 6 ) < 20
+19 > 7  || ( 6 + 6 ) < 20
+19 > 7  || 12 > 20
+true &&  false
+false
+
+left - right
+bodmas = bracket , order , div , mul, addi, sub
+pemdas = parentesis, expos, mu, div,ad, sub
+
+
+10 / 5 * 2 = 5
+10 * 5 / 5 = 10
+* / %
++ -
+10 * 5 + 5  / 2 = 
+50 + 5  / 2
+50 + 2
+
+
+
+*********** control flow ***********
+
+if-else
+	only if = 1 condition
+	if - else  = Either / or condition
+	if - else if - else if - else = multiple choice condition
+	
+	DO NOT END IF ELSE with semicolon
+	
+	between if else sequences NO ADDITION CODE should be written
+	
+	
+Loop flows
+	FOR Loop = FIXED amount of loop		concert booking
+	WHILE loop = 0 or more Loop		Shopping 
+	Do-WHILE loop = 1 or more loop		ATM
+	
+For 
+	infinite loop
+	for (int i =0 ; i < 5 ; i=i+2 )
+	{
+		sysout(hi);
+	}
+	
+	I= initialization 		int i =0 
+	C= condition check 	i < 5
+	M = modifiction		i ++
+	E = execution		sysout(hi);
+
+ICE	=	i=0,		true	print hi	
+MCE	=	i=2,		true	print hi
+MCE	=	i=4,		true	print hi
+MCE	= 	i=6		false
+MCE =	
+MCE = 
+	
+	
+	break; = EXIT LOOP
+	continue; = EXIT CURRENT LOOP
+	
+	CONTINUE
+	for (int i =0 ; i < 5 ; i++ )
+	{
+		sysout(hi);
+		if(i==2)
+			continue;
+		sysout(hello);
+	}
+	
+	ICE	=	i=0,	true,		print hi	print hello
+	MCE	=	i=1,	true,		print hi	print hello
+	MCE	=	i=2,	true,		print hi
+	MCE	=	i=3,	true,		print hi	print hello
+	MCE =	i=4,	true,		print hi	print hello
+	MCE = 	i=5, 	false
+		
+	BREAK
+	
+	for (int i =0 ; i < 5 ; i++ )
+	{
+		sysout(hi);
+		if(i==2)
+			break;
+		sysout(hello);
+	}
+
+	ICE	=	i=0,		true,		print hi 	print hello
+	MCE	=	i=1,		true,		print hi	print hello
+	MCE	=	i=2,		true,		print hi
+	MCE	=
+	MCE =	
+	MCE = 
+	
+	
+	
+	// 0 or more loop
+	while(condition_check){
+	
+		// loop execution
+	
+	}
+	
+	// 1 or more loop
+	do{
+		// loop execution
+	
+	}while(condition_check);
+	
+	
+	while and do-while
+		1) break statement somewhere
+		2) line where condition is set to fail/false
+		
+	
+	Switch case - faster performance than if, elseif
+	When to use switch case or if,elseif
+	switch case - compare literal value of primitive or string data type
+	if, elseif - if conditions are more complex and non primitive driven
+		login
+		if(userid=="java" && pwd="java1!")
+			asdsad
+		else if (email=="java@g.com" && pwd="java1!")
+			adasdasd
+		else if (phone==123213213 && pwd="java1!")
+			adasdasd
+		else if (secretpin=1234)
+			adasdasd
+					
+		
+		
+		
+	
+	
+	**************
