@@ -582,4 +582,22 @@ MCE =
 	**************
 	
 	
-	demo git
+	compiletime polymorphsim = OVERLOADING
+		same method name (MANDATORY)
+		different input (MANDATORY)
+	implemented in parent/child or same class
+	
+	runtime polymorphism = OVERRIDING
+	
+	
+	
+	
+	Programming/ development stage = write text code
+	compile time stage = converting text file into binary file
+	run time stage = binary file is executed by JRE/OS
+	
+	
+	
+	
+	
+	
