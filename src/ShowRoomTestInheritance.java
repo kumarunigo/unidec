@@ -2,6 +2,15 @@ import java.util.Scanner;
 
 public class ShowRoomTestInheritance {
 	public static void main(String[] args) {
+		Car cc=new Car();
+		/*
+		Car n=new Nissan();
+		n.drive();
+		// typecasting
+		if(n instanceof Nissan)
+			((Nissan)n).rearViewCamera();
+		*/
+		
 		Car c=null;
 		Scanner sc=new Scanner(System.in);
 		System.out.println("press 1 for basic, 2 for nissna, 3 for toyota, 4 ferrari");
@@ -17,8 +26,22 @@ public class ShowRoomTestInheritance {
 		
 		testDrive(c);
 	}
+	
+	
+	
+	
+	
+	
+	
 	public static void testDrive(Car c) {
-		c.drive(); // runtime polymorphism
+		
+		if( c  instanceof Ferrari)
+			((Ferrari) c).luxurySeats();
+		
+		// compiletime poly , overloading
+		c.drive("john"); 
+		// runtime polymorphism, overriding
+		c.drive(); 
 	}
 	
 }

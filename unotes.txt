@@ -583,21 +583,186 @@ MCE =
 	
 	
 	compiletime polymorphsim = OVERLOADING
-		same method name (MANDATORY)
-		different input (MANDATORY)
-	implemented in parent/child or same class
+		How to implement
+			same method name (MANDATORY)
+			different input (MANDATORY)
+			implemented in parent/child or same class
 	
 	runtime polymorphism = OVERRIDING
-	
-	
+		How to implement
+			method name : same (MANDATORY)
+			input/param : same (MANDATORY)
+			output return type : same or subclass return type
+			access privilege : broader ( private < default < protected < public  )
+			implemented in parent/child only
 	
 	
 	Programming/ development stage = write text code
 	compile time stage = converting text file into binary file
 	run time stage = binary file is executed by JRE/OS
 	
+	*******NEW ASSIGNMENT AND METHOD CALL RULES*******
+	
+	RHS can be same data type or sub class(CONCRETE)
+	Method call passing input can be same or sub class
+	
+	Student s=new Student();
+	method(s);
+	
+	public void method(Student ss)
+	
+	
+	Car c=new Car();
+	Car c=new Nissan();
+	
+	
+	Nissan n=new Nissan();
+	method(n);
+	public void method(Car ca)
+	
+	
+	Iphone6 i6=new IphoneX();
 	
 	
 	
+	instanceof is to check if real object in variable is one of it sub class type
+	
+	i6 instanceof Student
 	
 	
+	Runtime polymorphism : when encounter an overridden method, The REAL object (new operator)
+		behind the variable , its method is called.
+	
+	
+	
+	int a=10;
+	a=20;
+	
+	Car c=new Car();   c #abc      #abc asdadad
+	c=new Nissan();	c #pqr 
+	
+	
+	
+	IIphone
+	call();
+	text();
+	default browseInternet()
+		asdadasdsad
+Iphone3 implements IIPhone (Concrete, complete , working phone)
+	call()
+		adsad
+	text()
+		adsad
+Iphone6 extends IPhone3 (Concrete, complete , working phone)
+	camera()
+		sdsdf
+IphoneX extends Iphone6 (Concrete, complete , working phone)
+	applePay()
+		asdad
+Iphone12 extends IphoneX (Concrete, complete , working phone)
+	facialrecog()
+		asdad
+		
+BACKWARD COMPATIBILITY = before Java 1.8	
+	solution : default methods were introduced to solve backward compatibility 
+
+When multiple parents with conflicting default methods introduced the diamond problem again.
+	solution : Sub/Child class has to override and provide the solution itself.
+
+
+
+NONABSTRACT Design
+Telsa3
+	game()
+		asdasd
+	body()
+		adssad
+	interiroScreen()
+		asdas screen increase 1 inch
+	seat()
+		sdsdf
+	mileage()
+		100 miles
+TelsaS
+	game()
+		asdasd
+	body()
+		adssad
+	interiroScreen()
+		asdas screen increase 1 inch
+	seat()
+		sdsdf
+	mileage()
+		200 miles
+TelsaX
+	game()
+		asdasd
+	body()
+		adssad
+	interiroScreen()
+		asdas screen increase 1 inch
+	seat()
+		sdsdf
+	mileage()
+		300 miles
+TeslaY
+	game()
+		asdasd
+	body()
+		adssad
+	interiroScreen()
+		asdas screen increase 1 inch
+	seat()
+		sdsdf
+	mileage()
+		400 miles
+		
+		
+Abstract class = GENERALIZATION
+
+
+TelsaAbstract
+	body()
+		adssad
+	interiroScreen()
+		asdas screen increase 1 inch
+	game()
+		asdasd
+	seat()
+		sdsdf
+Telsa3 extends TelsaAbstract
+	mileage()
+		100 miles
+TelsaS extends TelsaAbstract
+	mileage()
+		200 miles
+TelsaX extends TelsaAbstract
+	mileage()
+		300 miles
+TeslaY extends TelsaAbstract
+	mileage()
+		400 miles
+		
+		
+IPayment
+	getCustomerName();
+	collectShippingAddress();
+	getEmailId();
+	processPayment();
+	
+AbstractPayment implemnts IPayment
+	getCustomerName()
+		ad
+	collectShippingAddress()
+		aqe
+	getEmailId()
+		ads
+Paypal extends AbstractPayment
+	processPayment()
+		sdfsf
+CreditCard  extends AbstractPayment
+	processPayment()
+		sdfsf
+Bitcoin  extends AbstractPayment
+	processPayment()
+		sdfsf
