@@ -1,6 +1,6 @@
-public class Car {
+public  class Car {
 	//access privilege : broader ( private < default < protected < public  )
-	protected void drive() {
+	protected  void drive() {
 		System.out.println("basic speed");
 	}
 	public void drive(String s) {

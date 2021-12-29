@@ -1,4 +1,10 @@
 public class Parent extends GrandParent{
+	int age=40;
+	public Parent(String s) {
+		super();
+		System.out.println("parent is born");
+	}
+	
 	public int b=20;
 	public void test(String s) {
 		System.out.println("parent test");

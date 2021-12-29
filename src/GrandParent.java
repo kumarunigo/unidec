@@ -1,4 +1,9 @@
 public class GrandParent {
+	int age=60;
+	public GrandParent() {
+		System.out.println("grandparent is born");
+	}
+	
 	public int a=10;
 	public void test() {
 		System.out.println("grand parent test");

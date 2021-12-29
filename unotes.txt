@@ -766,3 +766,102 @@ CreditCard  extends AbstractPayment
 Bitcoin  extends AbstractPayment
 	processPayment()
 		sdfsf
+		
+		
+		
+************** access privileges ************
+
+packages 
+
+com.amazon.www.login
+	login.java
+	register.java
+com.amazon.www.browse
+	shopping.java
+	add2Cart.java
+com.amazon.www.checkOut
+	billing.java
+	payment.java
+
+2 programs are connected to each other in 2 ways
+	IS-A = Inheritance
+		Car > Nissan
+		Iphone > Iphone3 > IphoneX
+		Nissan IS-A Car
+		IphoneX IS-A Iphone
+		
+	HAS-A = composition (creating references)
+		
+
+	
+*************** inheritnace
+
+
+Super is the reference to parent class members
+	super.a  = access parent global variable
+	super.test();  = accessing parent method test
+	super();   = accessing parent's constructor
+	
+	
+
+************* static *******
+	common/shared variable 
+	utility method
+
+
+Bank
+	withdraw
+	
+	deposit
+		balance=100
+		depositAmount=20;
+		Utility.add( balance , depositAmount);
+	
+Accountant
+	calculateIncome
+		Utility.add( JanSalary,FebSalary);
+	taxFiling
+	
+	
+Utility
+	static add
+	static sub
+	static mul
+	static div
+	
+	
+**************** final ***************
+
+class = cannot inherit (INHERITANCE)
+method = cannot override (POLYMORPHISM)
+variable = cannot change value
+
+public final class BasicArithmetic{
+	public int add(int a, int b){
+		int sum=a+b;
+		return sum;
+	}
+
+	public int sub(int a, int b){
+		int sum=a-b;
+		return sum;
+	}
+
+	public int mul(int a, int b){
+		int sum=a*b;
+		return sum;
+	}
+
+	public int div(int a, int b){
+		int sum=a/b;
+		return sum;
+	}
+
+
+}
+
+
+**************** array *****************
+
+
+
