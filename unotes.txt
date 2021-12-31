@@ -992,3 +992,30 @@ name.substring(1,4); // ohn
 
 name="     john     doe   ";
 name.trim(); //john     doe//
+
+
+
+
+******************* collection
+
+
+List : indexed,dynamic size 
+	ArrayList : good for reading
+	Vector : synchronized, thread safe
+	LinkedList : good for editing
+
+Set : unique, dynamic size
+	HashSet : unordered
+	LinkedHashSet: ordered
+	TreeSet : sorted
+	
+	
+Display dashboard in a restaurant
+	display names of all customer who order food.
+LinkedHashSet
+
+
+Airline Flight display board
+	TreeSet - flight displayed as time sorted
+
+
