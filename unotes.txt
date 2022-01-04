@@ -1019,3 +1019,27 @@ Airline Flight display board
 	TreeSet - flight displayed as time sorted
 
 
+Map
+	HashMap
+	LinkedHashMap
+	TreeMap
+	
+	
+if 2 object are equal = there hashcode should also be equal
+if 2 object have same hashcode = there object need not be equal
+
+
+if set or map(key) is being used for programmer/user defined class
+	write code for categorization(hashCode) and duplicate check (equals)
+if programmer/user defined class is being used in TreeSet or TreeMap(key)
+	implement comparable class... compareTo method... 
+	if this method return negative number , then u will place the object on top... 
+	if this method return postivve number , then u will place the object on bottom... 
+	
+	
+	
+	
+	
+	
+	
+	

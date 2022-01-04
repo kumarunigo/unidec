@@ -7,7 +7,7 @@ import exceptions.Person;
 public class CollectionTest {
 
 	public static void main(String[] args) {
-		 	ArrayList<String> names=new ArrayList<String> ();
+		 	HashSet<String> names=new HashSet<String> ();
 		 	names.add("john");
 		 	names.add("jane");
 		 	names.add("john");
@@ -16,6 +16,7 @@ public class CollectionTest {
 		 	names.remove("jane");
 		 	System.out.println(names);
 		 	names.add(2,"ron");
+		 	System.out.println(names.get(2));
 		 	System.out.println(names);
 		 	HashSet<Person> per=new HashSet<Person> ();
 		 	Person p1=new Person();
