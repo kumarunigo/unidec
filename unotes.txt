@@ -1036,10 +1036,53 @@ if programmer/user defined class is being used in TreeSet or TreeMap(key)
 	if this method return negative number , then u will place the object on top... 
 	if this method return postivve number , then u will place the object on bottom... 
 	
+
+// doesnt require hashcode and equals
+ArrayList<Items> shoppingCart=new ArrayList<Items> ();
+// require hashcode and equals
+HashSet<Items> shoppingCart=new HashSet<Items> ();
+// doesnt require hashcode and equals
+HashMap<String,Items> customersCart=new HashMap<String,Items>();
+// require hashcode and equals
+HashMap<Items,String> customersCart=new HashMap<Items,String>();
+public class Items{
+	String product;
+	int quantity;
+	float price;
+	 
+}
+
+
+
+***************** file *******************
+File path
+D:/Tutorial/java/java.ppt
+
+file
+	text file : human readable
+	binary file : 10 machines
 	
+	Java.io
+Character stream : read / write text files
+	xxxxxReader
+	xxxxxWriter
+Binary stream : read  / write binary files
+	xxxxxInputStream
+	xxxxxOutputStream
 	
+	// text file = group of characters... String
+	FileWriter print= new FileWriter(writef); 
+	String textContent="hi how are you";
+	print.write(textContent);
 	
+	BufferedWriter decorated on FileWriter
 	
-	
-	
+	// binary file = group of bytes... array of bytes ?
+	FileOutputStream fos = new FileOutputStream(toCompletePath);
+	byte[] buffer = new byte[1000000];
+	fos.write(buffer);
+        	
+		
+	Serialization : Store java object from java memory into Persistent storage(disk space)
+	Deserialization : restore file from persistent storage back into Java memory
 	
