@@ -1,1088 +1,156 @@
-src : source code - text file. human readable/writable
-	code in a file
-	.java extension
-				||
-			COMPILER (JDK = COMPILER & JRE)
-				||
-
-bin : binary code - machine reable format
-
-	JRE = launch/run/execute java program
+Procedure oriented programming : C programming
+	focus on task/function
 	
-	
-Programmer = JDK... source code... convert binary code
-Customers = JRE...
-
-
-procedure oriented programming : C language
-object oriented programming : java c++ csharp
-
-Requirement analysis
-
-Person
-	has-a : hands, legs, mouth, name
-	Does-a : Acitivity/action/behaviours 
-		eat,walk,watch
+		flyRocket:
 		
 		
-	programs : has information.... instructions on how to process information
+Object oriented programming : Java,	Dotnet,	Ruby
+	focus on Data and functions around that data
+Modular approach
+
+	Rocket
+		Has-A : FuelChamber, exhaution, lifesupport		
+		Does-A
+			fly			
+			lifesupport
+		
+	BankAccount
 	
-OOP - modular/distributed
-	
-BankCustomer : phoneNumber, address,account number, deposit, withdraw, name, balance
-	has-a : phoneNumber, address,accountNumber, name, balance
-	does-a : 
-		despoit
-			balance increases
-	
-		withdraw
-			balance decreases
+		Has-A : (attributes or Data of the system)
+			accountNumber=123,routing=11,address=ca,
+			cusName=john,Money=100$,phone=456
 			
-public class BankCustomer{
-	int balance=100;
-	String name="john";
-	int ssn;
-	public void withdraw(int amount){
-		balance=balance-amount;
-	}
-	public void deposit(int amount){
-		balance=balance+amount;
-	}
-}
+		Does-A : (Actions associated with the system)
+			withdraw = 10$
+				deduct 10$ from Money100$ = 90$ (LOGIC)
+			deposit = 25$
+				add 25$ to Money100$ = 125$
+			changePhone = 456
+				update the new phone
+			changeAddress = ca
+				upadte the new address
 			
-buyer, person, seller
+	public class BankAccount{
+		String name="john";
+		int money=100;
+		int phone=456;
 
-buyer is-A person
-seller is-A person
-person is-A buyer
+		public void withdraw(int withdrawAmount){
+			money=money-withdrawAmount;
+		}
 
-Amazon software
-	10 million - PRODUCTS
-
-
-Person
-	has-a : name,shippingaddres,contact,email
-	does-a : changeAddress,Changecontact,updateEmail
-
-Buyer inherits Person
-	has-a : creditcard,
-	does-a : browse, add2Cart,payment,cancelOrder,return,postReviews
-
-
-Seller inherits Person
-	has-a : bankaccount
-	does-a : browse, add2Cart,payment,cancelOrder,return,postReviews,changeAddres,changeCrdit
-
-Product
-	has-a : name,description,reviews, price, offer
-	does-a :  buy,sell,updateQuantity
-
-
-Generalize concept
-
-Address
-	street
-	city
-	state
-	zip
-	country
-	
-	
-	
-
-
-
-
-Buyer - CLASS
-	DATA
-	VARIABLES has-a : name,shippingaddres,contact,email,creditCard,accountActive
-	METHODS does-a : browse, add2Cart,payment,cancelOrder,return,postReviews
-
-	data_type   data_name; // declaration
-	group_of_character name;
-	number contact;
-	
-	name 
-		Primitive data type
-			single character ? char
-			number ? byte,short,int,long
-			fraction number ? float,double
-			yes/no ? boolean
-		
-		Object data type
-			group of character ? YES String
-			complex ?
-		String    name;
-	shippingaddres
-		single character ?
-		number ?
-		fraction number ?
-		yes/no ?
-		group of character ? 
-		Complex information ? YES
-	
-
-Primitive data type
-
-Object data type
-
-
-
-
-
-bankAccount
-	has-a : balance
-	
-public class BankAccount{
-
-	long balance=100;
-}
-Car
-	wheel, engine, fuel, steering
-	
-	Increase speed : 
-
-Variables :
-	What is Variable	
-		container/holds information
-		something that changes : information stored in variable are bound to change
-	Data types
-	Data structure - IS-A , HAS-A
-	Values 
-	Declaration rules
-	Initialization rules
-	Assignment rules
-	Rules on Data
-		Reading data
-		changing data
-	Scope of Data
-		Data that is part of you or defines you - global
-		Data that is provided to you by other - parameter
-		Data that u hold on temprory basis - local
-	Accessing Data
-		Within
-		
-		
-		
-		
-	*********** Declaration rules ***********
-	Declration line includes.... Data type followed by variable name
-	variable cannot be assigned with a value before declaration a data type
-	variable names : same program and same block
-		u cannot have 2 similar variable names
-		can contain alphabets, numbers, $, _
-		start with alphabet or $ or _ 
-		coding practice
-			naming convention - camelCase
-			choose a relevant meaningful names
-	
-		int a=12;
-		// int is data type
-		// a is variable name
-		// 1 is value that variable a holds
-		// = assignment operator
-		// LHS = everthing on left of equal sign
-		// RHS = everthing on right of equal sign
-	
-	
-	values
-		float b=1.0f; // literal value
-		double dd=2.0d;
-		char c='d';
-		boolean d=false;
-		String e1="john";
-		String e2=new String();
-		Address f=new Address(); // refernce value
-		Address shippingAddress_$123;
-		String hihowareyou;
-
-********* important ***********
-// int = data type , x = variable name, 20 = value of variable x
-// = assignment operator
-// RHS = anything that is on the right side of equal sign
-// LHS  = anything that is on the left side of equal sign
-// literal value and reference value (memory address)
-// in-built complex object data type - provided during jdk installation
-String e2=new String();
-// user defined complex object data type - programmer created class
-Address f=new Address();
-
-
-	******** initialization and assignment rules ****
-	Value assigned to a variable for the FIRST time.
-	values should match the data type on LHS
-	RHS can be literal value or variable of same type
-	
-	
-		// LHS primitive data type - RHS can be literal value or variable of same type
-			a=20;
-			a=b;		
-		// LHS object complex data type - RHS can be new operator or variable of same type
-			g=new Address();
-			g=h;
-		// LHS should ALWAYS be a variable	
-			//new Address()=g;
-			//10=a;
-			//"jane"=c;
-		// WHEN using variables on LHS and RHS
-			RHS variable VALUE is OVERWRITTEN on LHS variable
-			
-			
-	
-		
-
-	
-	********* Scope of Data ********* 
-		Data that is part of you or defines you - global
-		Data that is provided to you by other - parameter
-		Data that u hold on temprory basis - local
-		
-		
-	********* Accessing Data ********* 
-		same program : direct access 
-		outside program : accessed with reference to the program using dot operator
-
-
-
-
-
-
-Methods :
-	********* Method Declaration	*********
-		how to recognize methods : Does-A exercise
-		how to code methods :
-			What to name this activity ??? <<NAME>>
-			how many inputs are required ??? what are the data type of each inputs ???
-			how many outputs are required ??? what is the data type of each output ???
-		
-		PUBLIC 	OUTPUT 	NAME	(INPUT)
-	
-	
-		NAME : similar rules as variables
-			Follow camelCase format in method names
-			Alphabets , numbers, $, _ allowed in method names
-	
-		OUTPUT : CAN ALWAYS BE 0 or 1 
-			0 = void  ... 
-				public  void hello(String message)
-			1 = appropriate data type, int/boolean... 
-				public int add(int a, int b)
-			more than 1 = complex or multiple infor to return, create an object data type 
-				public Profile display(String userid)
-				
-		INPUT : CAN ALWAYS BE 0 or MORE 
-			0 = if no input require, leave it empty
-				public int bye(  )
-			More = if more than 1 input , separated by comma. data type followed by the name 
-				public int add(int number1, int number2)
-
-	********* Method Body - logic/ instructions ********* 
-	
-		LOGIC : use control flows and operators for logic.
-		
-		
-		RETURN STATEMENT :
-		
-			if void - no return required
-			if anything but void - return required
-				primitive data type - 
-					literal value that matches output data type 
-						or 
-					variable that matches output data type 
-				Object data type
-					variable that matches output data type 
-					
-					
-	
-Methods : Service
-	********* Method Declaration	*********
-		how to recognize methods : Does-A exercise
-		how to code methods :
-			What to name this activity ??? <<NAME>>
-			how many inputs are required ??? what are the data type of each inputs ???
-			how many outputs are required ??? what is the data type of each output ???
-	
-
-
-Calculator :
-	Does a : add, sub, mult, div
-*************************************** IMPORTANT *******************************	
-	NAME : similar rules as variables
-		Follow camelCase format in method names
-		Alphabets , numbers, $, _ allowed in method names
-
-	OUTPUT : CAN ALWAYS BE 0 or 1 
-		0 = void  ... 
-			public  void hello(String message)
-		1 = appropriate data type, int/boolean/address... 
-			public int add(int a, int b)
-		more than 1 = complex or multiple infor to return, create an object data type 
-			public Profile display(String userid)
-			
-	INPUT : CAN ALWAYS BE 0 or MORE 
-		0 = if no input require, leave it empty
-			public int bye(  )
-		More = if more than 1 input , separated by comma. data type followed by the name 
-			public int add(int number1, int number2)
-
-	
-	What to name this activity ???  calculateSimpleInterest
-	how many inputs are required ??? what is name and data type of each inputs ???  3 input, int principal , byte time, float rate
-	how many outputs are required ??? what is the data type of each output ???  1 output, 
-			1000 X 12 X 4.5 / 100 = 480.35
-
-*************************************** IMPORTANT *******************************
-	PUBLIC 	OUTPUT 	NAME	(INPUT)
-	public	int		calculateSquare	(int sides )
-	public	float		calculateSimpleInterest	(int principal , byte time, float rate )
-	public 	int 		calculateRectangle(int length, int breadth)
-	Design a software service to calculate area of square
-	Design a software service that can calclate banking simple interest
-	area of rectangle
-			
-	
-	What to name this activity ???  login
-	how many inputs are required ??? what is name and data type of each inputs ??? 2, String userid , String password
-	how many outputs are required ??? what is the data type of each output ???  boolean
-	
-	public 	boolean	login(String userid, String password)
-	
-	
-	Application Programming Interface / service / method
-method declaration
-public boolean transferService(String receiverName,int amount){// opening bracket
-	method body/ method definition
-	
-} // closing bracket
-
-
-BankingAtm
-curly bracket. code block.... group of one or more related/relevant code 
-put together
-withdraw{
-	take amount input from customer
-	deduct withdraw amount from bank balance
-}
-deposit{
-	take amount input from customer
-	add depoist amoount to bank balance
-}
-changePin{
-	we will change customers pin
-}
-checkBalance{
-	display customer current bank balance
-}
-						
-						
-					
-
-{
-	{
-		{
-			int a=20; // scope / lifespan
-			{
-				
-			}
+		public void deposit(int depositAmount){
+			money=money+depositAmount;
 		}
 	}
-}
-variable is created from the line it was declared ... 5
-variable is destroyed - at the closing of current code block... 9
-	look for opening bracket before declaration line {
-	
-	
-Is Java pass by value or pass by reference address
-
-PASS BY VALUE
-However value of complex/object data type is reference address
-
-************* operator **********
-
-Arithmetic operators - number, fraction data type ( int, long, float etc)
-equality operator == - ANY data type
-	a=b // assignment
-	a==b // equality LHS and RHS are equal in values
-	a!=b // LHS and RHS are NOT equal in values
-
-Relational operator - greater or less comparison - number, fraction data type ( int, long, float etc)
-	10 is greater than 5 = true
-
-
-conditional operator
-	&&
-	TRUE AND TRUE = TRUE  , 1 AND 1 = 1
-	TRUE AND FALSE = FALSE, 1 AND 0 = 0
-	FALSE AND TRUE = FALSE
-	FALSE AND FALSE = FALSE
-
-	||
-	TRUE OR TRUE = TRUE
-	TRUE OR FALSE = TRUE
-	FALSE OR TRUE = TRUE
-	FALSE OR FALSE = FALSE
-
-int aa=10;
-int bb=20;
-int cc=30;
-int dd=40;
-(aa>bb) || (cc < dd) ==== true
-FALSE || TRUE
-
-operator Precedence
-
-1) () 
-2) * / %
-3) + -
-4) relational > < 
-5) equality ==
-6) logical && ||
-bodmasrel
-if same level.. go left to right
-
-(4 + 5 * 3 ) > ( 6 + 4 - 3)  && ( 3 * 2 + ( 2+4) ) < 20
-(4 + 15 ) > ( 6 + 4 - 3)  || ( 3 * 2 + ( 2+4) ) < 20
-19 > ( 6 + 4 - 3)  || ( 3 * 2 ( 2+4) ) < 20
-19 > ( 10 - 3)  || ( 3 * 2 + ( 2+4) ) < 20
-19 > 7  || ( 3 * 2 + ( 2+4) ) < 20
-19 > 7  || ( 3 * 2 + 6 ) < 20
-19 > 7  || ( 6 + 6 ) < 20
-19 > 7  || 12 > 20
-true &&  false
-false
-
-left - right
-bodmas = bracket , order , div , mul, addi, sub
-pemdas = parentesis, expos, mu, div,ad, sub
-
-
-10 / 5 * 2 = 5
-10 * 5 / 5 = 10
-* / %
-+ -
-10 * 5 + 5  / 2 = 
-50 + 5  / 2
-50 + 2
-
-
-
-*********** control flow ***********
-
-if-else
-	only if = 1 condition
-	if - else  = Either / or condition
-	if - else if - else if - else = multiple choice condition
-	
-	DO NOT END IF ELSE with semicolon
-	
-	between if else sequences NO ADDITION CODE should be written
-	
-	
-Loop flows
-	FOR Loop = FIXED amount of loop		concert booking
-	WHILE loop = 0 or more Loop		Shopping 
-	Do-WHILE loop = 1 or more loop		ATM
-	
-For 
-	infinite loop
-	for (int i =0 ; i < 5 ; i=i+2 )
-	{
-		sysout(hi);
-	}
-	
-	I= initialization 		int i =0 
-	C= condition check 	i < 5
-	M = modifiction		i ++
-	E = execution		sysout(hi);
-
-ICE	=	i=0,		true	print hi	
-MCE	=	i=2,		true	print hi
-MCE	=	i=4,		true	print hi
-MCE	= 	i=6		false
-MCE =	
-MCE = 
-	
-	
-	break; = EXIT LOOP
-	continue; = EXIT CURRENT LOOP
-	
-	CONTINUE
-	for (int i =0 ; i < 5 ; i++ )
-	{
-		sysout(hi);
-		if(i==2)
-			continue;
-		sysout(hello);
-	}
-	
-	ICE	=	i=0,	true,		print hi	print hello
-	MCE	=	i=1,	true,		print hi	print hello
-	MCE	=	i=2,	true,		print hi
-	MCE	=	i=3,	true,		print hi	print hello
-	MCE =	i=4,	true,		print hi	print hello
-	MCE = 	i=5, 	false
-		
-	BREAK
-	
-	for (int i =0 ; i < 5 ; i++ )
-	{
-		sysout(hi);
-		if(i==2)
-			break;
-		sysout(hello);
-	}
-
-	ICE	=	i=0,		true,		print hi 	print hello
-	MCE	=	i=1,		true,		print hi	print hello
-	MCE	=	i=2,		true,		print hi
-	MCE	=
-	MCE =	
-	MCE = 
-	
-	
-	
-	// 0 or more loop
-	while(condition_check){
-	
-		// loop execution
-	
-	}
-	
-	// 1 or more loop
-	do{
-		// loop execution
-	
-	}while(condition_check);
-	
-	
-	while and do-while
-		1) break statement somewhere
-		2) line where condition is set to fail/false
-		
-	
-	Switch case - faster performance than if, elseif
-	When to use switch case or if,elseif
-	switch case - compare literal value of primitive or string data type
-	if, elseif - if conditions are more complex and non primitive driven
-		login
-		if(userid=="java" && pwd="java1!")
-			asdsad
-		else if (email=="java@g.com" && pwd="java1!")
-			adasdasd
-		else if (phone==123213213 && pwd="java1!")
-			adasdasd
-		else if (secretpin=1234)
-			adasdasd
-					
 		
 		
 		
-	
-	
-	**************
-	
-	
-	compiletime polymorphsim = OVERLOADING
-		How to implement
-			same method name (MANDATORY)
-			different input (MANDATORY)
-			implemented in parent/child or same class
-	
-	runtime polymorphism = OVERRIDING
-		How to implement
-			method name : same (MANDATORY)
-			input/param : same (MANDATORY)
-			output return type : same or subclass return type
-			access privilege : broader ( private < default < protected < public  )
-			implemented in parent/child only
-	
-	
-	Programming/ development stage = write text code
-	compile time stage = converting text file into binary file
-	run time stage = binary file is executed by JRE/OS
-	
-	*******NEW ASSIGNMENT AND METHOD CALL RULES*******
-	
-	RHS can be same data type or sub class(CONCRETE)
-	Method call passing input can be same or sub class
-	
-	Student s=new Student();
-	method(s);
-	
-	public void method(Student ss)
-	
-	
-	Car c=new Car();
-	Car c=new Nissan();
-	
-	
-	Nissan n=new Nissan();
-	method(n);
-	public void method(Car ca)
-	
-	
-	Iphone6 i6=new IphoneX();
-	
-	
-	
-	instanceof is to check if real object in variable is one of it sub class type
-	
-	i6 instanceof Student
-	
-	
-	Runtime polymorphism : when encounter an overridden method, The REAL object (new operator)
-		behind the variable , its method is called.
-	
-	
-	
-	int a=10;
-	a=20;
-	
-	Car c=new Car();   c #abc      #abc asdadad
-	c=new Nissan();	c #pqr 
-	
-	
-	
-	IIphone
-	call();
-	text();
-	default browseInternet()
-		asdadasdsad
-Iphone3 implements IIPhone (Concrete, complete , working phone)
-	call()
-		adsad
-	text()
-		adsad
-Iphone6 extends IPhone3 (Concrete, complete , working phone)
-	camera()
-		sdsdf
-IphoneX extends Iphone6 (Concrete, complete , working phone)
-	applePay()
-		asdad
-Iphone12 extends IphoneX (Concrete, complete , working phone)
-	facialrecog()
-		asdad
+	amazon
+		has-a  product, customer, buyer,seller
 		
-BACKWARD COMPATIBILITY = before Java 1.8	
-	solution : default methods were introduced to solve backward compatibility 
-
-When multiple parents with conflicting default methods introduced the diamond problem again.
-	solution : Sub/Child class has to override and provide the solution itself.
-
-
-
-NONABSTRACT Design
-Telsa3
-	game()
-		asdasd
-	body()
-		adssad
-	interiroScreen()
-		asdas screen increase 1 inch
-	seat()
-		sdsdf
-	mileage()
-		100 miles
-TelsaS
-	game()
-		asdasd
-	body()
-		adssad
-	interiroScreen()
-		asdas screen increase 1 inch
-	seat()
-		sdsdf
-	mileage()
-		200 miles
-TelsaX
-	game()
-		asdasd
-	body()
-		adssad
-	interiroScreen()
-		asdas screen increase 1 inch
-	seat()
-		sdsdf
-	mileage()
-		300 miles
-TeslaY
-	game()
-		asdasd
-	body()
-		adssad
-	interiroScreen()
-		asdas screen increase 1 inch
-	seat()
-		sdsdf
-	mileage()
-		400 miles
+		does-a
+			login
+			add2Cart
+			shop
+			checkout
 		
 		
-Abstract class = GENERALIZATION
-
-
-TelsaAbstract
-	body()
-		adssad
-	interiroScreen()
-		asdas screen increase 1 inch
-	game()
-		asdasd
-	seat()
-		sdsdf
-Telsa3 extends TelsaAbstract
-	mileage()
-		100 miles
-TelsaS extends TelsaAbstract
-	mileage()
-		200 miles
-TelsaX extends TelsaAbstract
-	mileage()
-		300 miles
-TeslaY extends TelsaAbstract
-	mileage()
-		400 miles
-		
-		
-IPayment
-	getCustomerName();
-	collectShippingAddress();
-	getEmailId();
-	processPayment();
+	Rock
 	
-AbstractPayment implemnts IPayment
-	getCustomerName()
-		ad
-	collectShippingAddress()
-		aqe
-	getEmailId()
-		ads
-Paypal extends AbstractPayment
-	processPayment()
-		sdfsf
-CreditCard  extends AbstractPayment
-	processPayment()
-		sdfsf
-Bitcoin  extends AbstractPayment
-	processPayment()
-		sdfsf
+		has-a 
+			color,weight,element
+			
+		does-a
+			throw
+			paperweight
+			
+	15 years R and D 		
+	Iphone3 - 2006
+		call
+		text
+		browse
 		
+	Reusability
+	Iphone4 - 2007
+		call
+		text
+		browse
+		map
 		
+	===========================
+	abstract class - abstraction
+	
+	GenericPyment
+		name
+		shipping address
+		billing address
+		contact email id
+		contact phone
 		
-************** access privileges ************
+	
+	PaymentCreditCard
+		credit card
+		
+	CryptoCard
+		cryptowallet
+		
+	Paypal
+		paypal userid pwd
+			
+	Customer >>>>>>>> bank account >>>>>>>>>>>>> amazon	
+	set												get
+			
+			
+			
 
-packages 
-
-com.amazon.www.login
-	login.java
-	register.java
-com.amazon.www.browse
+loginPage
+	Login.java
+	registeration.java
+browsing
 	shopping.java
-	add2Cart.java
-com.amazon.www.checkOut
-	billing.java
-	payment.java
-
-2 programs are connected to each other in 2 ways
-	IS-A = Inheritance
-		Car > Nissan
-		Iphone > Iphone3 > IphoneX
-		Nissan IS-A Car
-		IphoneX IS-A Iphone
-		
-	HAS-A = composition (creating references)
-		
-
-	
-*************** inheritnace
+	checkout.java
 
 
-Super is the reference to parent class members
-	super.a  = access parent global variable
-	super.test();  = accessing parent method test
-	super();   = accessing parent's constructor
-	
-	
-
-************* static *******
-	common/shared variable 
-	utility method
-
-
-Bank
-	withdraw
-	
-	deposit
-		balance=100
-		depositAmount=20;
-		Utility.add( balance , depositAmount);
-	
-Accountant
-	calculateIncome
-		Utility.add( JanSalary,FebSalary);
-	taxFiling
-	
-	
-Utility
-	static add
-	static sub
-	static mul
-	static div
-	
-	
-**************** final ***************
-
-class = cannot inherit (INHERITANCE)
-method = cannot override (POLYMORPHISM)
-variable = cannot change value
-
-public final class BasicArithmetic{
-	public int add(int a, int b){
-		int sum=a+b;
-		return sum;
+bankAccount {
+	withdraw{
+		deduct withdraw amount from balanace
 	}
-
-	public int sub(int a, int b){
-		int sum=a-b;
-		return sum;
+	deposit{
+		add amount to balanace
 	}
-
-	public int mul(int a, int b){
-		int sum=a*b;
-		return sum;
+	checkBalance{
+		display available balance
 	}
-
-	public int div(int a, int b){
-		int sum=a/b;
-		return sum;
-	}
-
-
 }
-
-
-**************** array *****************
-
-
-
-*****************exceptions************
-
-Intro : 
-	Customers :
-		1. Avoid technical error message and provide easy to understand messages
-		2. different custom error message for each failure , that customer can use to resolve the issue
-			ATM software
-				card damaged
-				card expired
-				atm wrong pin
-				insufficient fund
-				
-			sorry for the inconvinience, please try again later			
-	Developers :
-		1. Exception stack trace
-		Exception in thread "main" java.lang.ArithmeticException: / by zero (WHAT IS THE PROBLEM)
-			at exceptions.MethodCall4.test3(MethodCall4.java:14) (WHERE IS THE PROBLEM)
-			at exceptions.MethodCall4.test2(MethodCall4.java:11)
-			at exceptions.MethodCall4.test(MethodCall4.java:8)
-			at exceptions.MethodCall4.exc(MethodCall4.java:5)
-			at exceptions.ExceptionTest.main(Login.java:7) ( WHERE IT ALL BEGAN)
-			
-		Exception in thread "main" java.lang.ArithmeticException: / by zero (WHAT IS THE PROBLEM)
-				at exceptions.MethodCall4.test3(MethodCall4.java:14) (WHERE IS THE PROBLEM)
-				at exceptions.MethodCall4.test2(MethodCall4.java:11)
-				at exceptions.MethodCall4.test(MethodCall4.java:8)
-				at exceptions.MethodCall4.exc(MethodCall4.java:5)
-				at exceptions.ExceptionTest.main(Payment.java:7) ( WHERE IT ALL BEGAN)
-			
-		Exception in thread "main" java.lang.ArithmeticException: / by zero (WHAT IS THE PROBLEM)
-				at exceptions.MethodCall4.test3(MethodCall4.java:14) (WHERE IS THE PROBLEM)
-				at exceptions.MethodCall4.test2(MethodCall4.java:11)
-				at exceptions.MethodCall4.test(MethodCall4.java:8)
-				at exceptions.MethodCall4.exc(MethodCall4.java:5)
-				at exceptions.ExceptionTest.main(Shopping.java:7) ( WHERE IT ALL BEGAN)
-		
-
-NullPointerException : when we apply dot operator on a null valued variable
-
-exceptions type : 
-	throwable : parent of all exception/failure
-		exception : failure due to technical/programming mistakes				
-			checked : has to be handled while programming
-			runtime: not enforced/required to handle
-		errors : more sever failures, that might require hardware upgrade.
-
-Exception handling in program
-try/catch/finally
-		try{
-			ALL CODE THAT WE SUSPECT MIGHT FAIL
-			// NOT ALL LINES GUARANTEED
-		}
-		// NOT GUARANTEED
-		catch(Exception e){
-			CODE NEEDED IN THE EVENT OF FAILURE
-		}// GUARANTEED
-		finally{
-		
-		}
-
-	try - catch
-	try - finally
-	try - catch finally
-	try - catch catch catch
-	try - catch catch catch finally
-	
-	
-
-multiple catches :
-	used for specific custom message for different failures
-	catch should be written in the order of their inheritance... child > parent > grand parent
-throws
-	alternative to try-catch
-	this keyword allows the caller of your method to do the exception handling
-	
-programmer-defined exception
-	bank
-		int balance=100; // -2 billion to 2 billion
-		
-		withdraw(1000000)
-		{
-			balance= 100 - 1000000; // NO TECHNICAL LIMITATION
-								// BUSINESS LIMITATION
-		}
-
-	Telecom
-		phone( long number)
-		
-	phone(12);	
-
-
-
-
-
-registered userid = john
-
-login = John
-
-String email="@gmail.com";
-
-
-if( email.indexOf("@") == 0 )
-	sysout(invalid email);
-	
-	
-phone="123 123 1234";
-1231231234
-(123)123-1234
-(123)(123)(1234)
-
-123 123 1234
-phone.replaceAll(" ","");
-
-	
-	
-String name="john doe";
-String[] arr=name.split(" ");
-sysout(arr[0]);   // john
-sysout(arr[1]);   // doe
-
-name="john doe";
-name.substring(4); // doe
-name.substring(1,4); // ohn
-
-
-name="     john     doe   ";
-name.trim(); //john     doe//
-
-
-
-
-******************* collection
-
-
-List : indexed,dynamic size 
-	ArrayList : good for reading
-	Vector : synchronized, thread safe
-	LinkedList : good for editing
-
-Set : unique, dynamic size
-	HashSet : unordered
-	LinkedHashSet: ordered
-	TreeSet : sorted
-	
-	
-Display dashboard in a restaurant
-	display names of all customer who order food.
-LinkedHashSet
-
-
-Airline Flight display board
-	TreeSet - flight displayed as time sorted
-
-
-Map
-	HashMap
-	LinkedHashMap
-	TreeMap
-	
-	
-if 2 object are equal = there hashcode should also be equal
-if 2 object have same hashcode = there object need not be equal
-
-
-if set or map(key) is being used for programmer/user defined class
-	write code for categorization(hashCode) and duplicate check (equals)
-if programmer/user defined class is being used in TreeSet or TreeMap(key)
-	implement comparable class... compareTo method... 
-	if this method return negative number , then u will place the object on top... 
-	if this method return postivve number , then u will place the object on bottom... 
-	
-
-// doesnt require hashcode and equals
-ArrayList<Items> shoppingCart=new ArrayList<Items> ();
-// require hashcode and equals
-HashSet<Items> shoppingCart=new HashSet<Items> ();
-// doesnt require hashcode and equals
-HashMap<String,Items> customersCart=new HashMap<String,Items>();
-// require hashcode and equals
-HashMap<Items,String> customersCart=new HashMap<Items,String>();
-public class Items{
-	String product;
-	int quantity;
-	float price;
-	 
+loanapplication{
+applyloan
+check credit score
+check salary
 }
 
 
 
-***************** file *******************
-File path
-D:/Tutorial/java/java.ppt
 
-file
-	text file : human readable
-	binary file : 10 machines
+
+Simple Data - "PRIMITIVE DATA TYPE"
+1) number : 
+	byte ( 1 byte ) : -128 to +127 
+	short (2 byte ) : -32k to + 32k
+	int ( 4 byte ) : -2billion to + 2 billion
+	long ( 8 byte) : trillions
+2) decimal number
+	float ( 4 bytes) : 6 decimal point accuracy
+	double ( 8 bytes) : 
+3) yes/no
+	boolean 
+4) 1 character : A-Z , 0-9, special character
+	char
 	
-	Java.io
-Character stream : read / write text files
-	xxxxxReader
-	xxxxxWriter
-Binary stream : read  / write binary files
-	xxxxxInputStream
-	xxxxxOutputStream
-	
-	// text file = group of characters... String
-	FileWriter print= new FileWriter(writef); 
-	String textContent="hi how are you";
-	print.write(textContent);
-	
-	BufferedWriter decorated on FileWriter
-	
-	// binary file = group of bytes... array of bytes ?
-	FileOutputStream fos = new FileOutputStream(toCompletePath);
-	byte[] buffer = new byte[1000000];
-	fos.write(buffer);
-        	
-		
-	Serialization : Store java object from java memory into Persistent storage(disk space)
-	Deserialization : restore file from persistent storage back into Java memory
-	
+Complex Data - "OBJECT DATA TYPE"
+1) group of characters
+	firstname : john
+	String 
+2) sub information ;
+	address : 123 , abcd street, city, state, 12345
+	new program to be created
