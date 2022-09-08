@@ -154,3 +154,50 @@ Complex Data - "OBJECT DATA TYPE"
 2) sub information ;
 	address : 123 , abcd street, city, state, 12345
 	new program to be created
+
+
+**************************
+
+int a=30; 
+	int = data type
+	a   =  variable ( can change ) 
+	30 = value
+
+int b; // declaration line... declare variable named b is capable of storing numbered value
+int c=20;  // initialization.... when value has been given/assigned to a variabel FIRST time 
+c=30;      // re-assignment
+ 
+
+float weight;
+weight=123.1f;
+weight=125.1f;
+
+
+int age=123;
+	int is a data type
+	age is a variable
+	123 is a value
+	age is variable capable of storing numbered value
+	int age is declaratiion
+	age=123; is initialization
+
+
+int a=10;
+int b=a;
+int c=10+20;
+int d=10+c;
+
+Always process RHS and convert into a single value
+equal sign RULES... 
+1) LHS should always be a variable
+2) RHS can have values , variable, expressions
+	when RHS has variable or expression
+	int b=a; (replace value of RHS variable)
+	int b=10; 
+	
+	int c=10+20; (solve the expression)
+	int c=30;
+	
+	int d=10+c; ( 1-replace all RHS variable value...  2-solve the expression)
+	int d=10+30; 
+	int d=40; 
