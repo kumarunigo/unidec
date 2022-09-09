@@ -187,17 +187,108 @@ int b=a;
 int c=10+20;
 int d=10+c;
 
+	
+ *********** Declaration rules ***********
+	Declaration line includes.... Data type followed by variable name
+	variable cannot be assigned with a value before declaration a data type
+	variable names : same program and same block
+		u cannot have 2 similar variable names
+		can contain alphabets, numbers, $, _
+		start with alphabet or $ or _ 
+		coding practice
+			naming convention - camelCase
+			choose a relevant meaningful names
+	
+	
+******** initialization rules ****
+	Value assigned to a variable for the FIRST time.
+	values should match the data type on LHS
+	RHS can be literal value OR variable of same type OR expression OR method call
+	
 Always process RHS and convert into a single value
 equal sign RULES... 
 1) LHS should always be a variable
 2) RHS can have values , variable, expressions
-	when RHS has variable or expression
+	int a=10; // literal value
+	
+	when RHS has variable 
 	int b=a; (replace value of RHS variable)
 	int b=10; 
 	
-	int c=10+20; (solve the expression)
-	int c=30;
+	when RHS is expression
+	int c=10+20-10+44; (solve the expression)
+	int c=64;
 	
 	int d=10+c; ( 1-replace all RHS variable value...  2-solve the expression)
-	int d=10+30; 
-	int d=40; 
+	int d=10+64; 
+	int d=74; 
+	
+	when RHS is method call.. replace the returned result from method call
+	int result=cal.add(10,20);  
+	int result=30;  
+
+
+********* Accessing Data ********* 
+	same program : direct access 
+	outside program : accessed with reference to the program using dot operator
+
+
+
+Methods :
+	********* Method Declaration	*********
+		how to recognize methods : Does-A exercise
+		how to code methods :
+			What to name this activity ??? <<NAME>>
+			how many inputs are required ??? what are the data type of each inputs ???
+			how many outputs are required ??? what is the data type of each output ???
+		
+		PUBLIC 	OUTPUT 	NAME	(INPUT)
+	
+	
+		NAME : similar rules as variables
+			Follow camelCase format in method names
+			Alphabets , numbers, $, _ allowed in method names
+	
+		OUTPUT : CAN ALWAYS BE 0 or 1 
+			0 = void  ... 
+				public  void hello(String message)
+			1 = appropriate data type, int/boolean... 
+				public int add(int a, int b)
+			more than 1 = complex or multiple infor to return, create an object data type 
+				public Profile display(String userid)
+				
+		INPUT : CAN ALWAYS BE 0 or MORE 
+			0 = if no input require, leave it empty
+				public int bye(  )
+			More = if more than 1 input , separated by comma. data type followed by the name 
+				public int add(int number1, int number2)
+
+	********* Method Body - logic/ instructions ********* 
+	
+		LOGIC : use control flows and operators for logic.
+		
+		
+		RETURN STATEMENT :
+		
+			if void output - no return required
+			if anything but void - return required
+				primitive data type - 
+					literal value that matches output data type 
+						or 
+					variable that matches output data type 
+				Object /complex data type
+					variable that matches output data type 
+					
+					
+						
+						
+						
+						
+how to recognize methods : Does-A exercise
+		how to code methods :
+			What to name this activity ??? <<NAME>>
+			how many inputs are required ??? what are the data type of each inputs ???
+			how many outputs are required ??? what is the data type of each output ???
+		
+		PUBLIC 	OUTPUT 	NAME	(INPUT) parenthesis
+
