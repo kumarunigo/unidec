@@ -16,13 +16,13 @@ Modular approach
 		
 	BankAccount
 	
-		Has-A : (attributes or Data of the system)
+		Has-A : (attributes or Data of the system) "VARIABLES"
 			accountNumber=123,routing=11,address=ca,
 			cusName=john,Money=100$,phone=456
 			
-		Does-A : (Actions associated with the system)
+		Does-A : (Actions associated with the system) "METHODS"
 			withdraw = 10$
-				deduct 10$ from Money100$ = 90$ (LOGIC)
+				deduct 10$ from Money100$ = 90$ (LOGIC) "OPERATOR & CONTROL FLOW"
 			deposit = 25$
 				add 25$ to Money100$ = 125$
 			changePhone = 456
@@ -242,7 +242,8 @@ Methods :
 			how many inputs are required ??? what are the data type of each inputs ???
 			how many outputs are required ??? what is the data type of each output ???
 		
-		PUBLIC 	OUTPUT 	NAME	(INPUT)
+		optional	mandatory	mandatory 	(optional) 
+		PUBLIC 	OUTPUT 	NAME		(INPUT)
 	
 	
 		NAME : similar rules as variables
@@ -291,4 +292,184 @@ how to recognize methods : Does-A exercise
 			how many outputs are required ??? what is the data type of each output ???
 		
 		PUBLIC 	OUTPUT 	NAME	(INPUT) parenthesis
+
+************************************
+Variable -stores information
+
+
+Global
+	Static
+	instance
+Local
+	parametric
+	local
+	
+	
+ToyotaCorolla
+	customer1
+		static brand name
+		instance color
+		instance vin = 12313
+	customer2
+		brand name
+		color
+		vin= 4545
+		
+ChaseBankAccount1		
+	static BankName
+	balanc
+	acctNumber
+ChaseBankAccount2		
+	static BankName
+	balanc
+	acctNumber
+		
+		
+		
+		
+AppleProduct
+	has-a
+		price
+		description
+		code
+		 category="electronics"
+		ecommerce
+	
+	tble - furnitutere
+	chair - furnitutere
+	laptop - electronics
+	cellpphone - electronics
+	
+// AND : both should be satisfied	
+true and true = true
+true and false = false
+false and true = false
+false and false = false
+
+// OR : choice = either one of them should be satisified
+true or true = true
+true or false = true 
+false or true = true
+false or false = false
+
+// EX-OR : choice = either one of them should be satisified
+true ex-or true = false
+true ex-or false = true 
+false ex-or true = true
+false ex-or false = false
+
+
+10 + 20 * 4 - 5 = 115 , 30
+
+1) () 
+2) * / 
+3) + - 
+4) relational operator > <
+5) &&
+6) ||
+7) if u have multiple operator at the same level .. go left to right
+
+boolean z=  10 + 20 * 4 - 5 +( 2+ 3) > 2 && (10 + 2) > 3;
+
+10 + 20 * 4 - 5 +( 2+ 3) > 2 && (10 + 2) > 3
+10 + 20 * 4 - 5 +5  > 2 && (10 + 2) > 3
+10 + 20 * 4 - 5 +5  > 2 && 12 > 3
+10 + 80 - 5 +5  > 2 && 12 > 3
+90 - 5 +5  > 2 && 12 > 3
+85 +5  > 2 && 12 > 3
+90  > 2 && 12 > 3
+true && 12 > 3
+true && true
+true
+
+
+
+1 + 2 = 3
+1 equal to 2 = false (equality operator)
+1 greater than 2 = false(relational operator)
+
+is 1 equal to 1 OR 1 is greater than 2 = true(conditional operator)
+	TRUE	OR 		FALSE = TRUE
+	
+	
+Loop
+
+For : fixed loop
+While : 0 or more loop
+Do-While : 1 or more loop
+
+
+Airline seat booking software - book each seats one by one
+	fixed loop : fixed seats in a flight. cant go beyond fixed number.
+browse and add item to Shopping cart
+	While loop : 
+atm - use atm software
+	Do-While
+
+
+for(	initialization ; condition check : modification ){
+	repetitve task code
+}
+for(   int i=1;	i< 5	;	i++){
+	sysout(" hi ");
+}
+
+I C R		:	i=1,	true,	print hi
+M C R	:	i=2,	true,	print hi
+M C R	:	i=3,	true,	print hi
+M C R	:	i=4,	true,	print hi
+M C R	:	i=5,	false
+M C R
+M C R
+
+// INFINITE LOOP
+for(   int i=1;	i > 0	;	i++){
+	sysout(" hi ");
+}
+
+continue : Skip  current loop
+	and "continue" with next loop
+break:	emergency exit... stop entire loop...
+// < > == != && ||
+for(   int i=1;	i < 5	;	i++){
+	sysout(" hi ");
+		if(i==3)
+			break;
+	sysout(" bye");
+}
+
+
+I C R		:	i=1		true		print hi	print bye
+M C R	:	i=2		true		print hi	print bye
+M C R	:	i=3		true		print hi
+M C R	:	
+
+
+While Loop
+
+while( condition check ){
+
+
+
+}
+
+
+Switch case is better than if-else-if in performance
+	limitation : works only on primitive data type
+	
+complex conditions cannot be written in switch case
+since it operates only on primitive data type value
+
+if(userid==regUserid && pass=regPass)
+	sysout(welcome);
+else if(email==regemail && pass=regPass)
+	sysout(welcome);
+else if(phone==regphone && pass=regPass)
+	sysout(welcome);
+		
+	
+	
+
+
+
 

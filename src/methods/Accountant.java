@@ -1,7 +1,7 @@
 package methods;
 
 public class Accountant {
-
+	 
 	public static void main(String[] args) {
 		// method call
 		// 1 program is using the service provided by
