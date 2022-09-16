@@ -16,11 +16,15 @@ Modular approach
 		
 	BankAccount
 	
+	// variable = STORE information
 		Has-A : (attributes or Data of the system) "VARIABLES"
 			accountNumber=123,routing=11,address=ca,
 			cusName=john,Money=100$,phone=456
 			
 		Does-A : (Actions associated with the system) "METHODS"
+	// methods = CHANGE/ACESS information
+	// 		changes information from method body
+	
 			withdraw = 10$
 				deduct 10$ from Money100$ = 90$ (LOGIC) "OPERATOR & CONTROL FLOW"
 			deposit = 25$
@@ -468,7 +472,99 @@ else if(phone==regphone && pass=regPass)
 	sysout(welcome);
 		
 	
+	before java 1.8 
+interface IIphone
+	call();
+	text();
+	default void internetBrowing(){
 	
+	}
+	
+class abstract Iphone implements IIphone
+	call(){
+		sysout("making calll code");
+	}
+	text(){
+		sysout("sending text code");
+	}
+	// missing internetBrowing method
+class abstract Iphone3 extend Iphone
+	camera { code }
+	// inherited from parent Iphone : missing internetBrowing method
+	
+class abstract Iphone5 extend Iphone3
+	fingerprintScan { code }
+	// inherited from parent Iphone : missing internetBrowing method
+	
+class abstract IphoneX extend Iphone5
+	facialRecog { code }
+	// inherited from parent Iphone : missing internetBrowing method
+	
+backward compatbility = 1.8 default methods to support backward compatibility
+this created another diamond problem
+
+
+
+******WITHOUT ABSTRACT CONCEPT
+
+interface IPayment
+	collectShippingAddress();
+	collectBillingAddress();
+	processPayment();
+	collectPhone();
+	
+class CreditCard implements IPayment
+	collectShippingAddress(){  code add zip code}
+	collectBillingAddress(){  code }
+	processPayment(){  code }
+	collectPhone(){ code }
+	
+class DebitCard implements IPayment
+	collectShippingAddress(){  code add zip code }
+	collectBillingAddress(){  code }
+	processPayment(){  code }
+	collectPhone(){ code }
+	
+class Cypto implements IPayment
+	collectShippingAddress(){  code add zip code }
+	collectBillingAddress(){  code }
+	processPayment(){  code }
+	collectPhone(){ code }
+	
+class payPal implements IPayment
+	collectShippingAddress(){  code add zip code }
+	collectBillingAddress(){  code }
+	processPayment(){  code }
+	collectPhone(){ code }
+	
+	
+	
+************ WITH ABSTRACT CONCEPT	
+Abstract class : Generalization (COMMON)
+	
+interface IPayment
+	collectShippingAddress();
+	collectBillingAddress();
+	processPayment();
+	collectPhone();
+abstract class PartialPayment
+	collectShippingAddress(){  code add zip code}
+	collectBillingAddress(){  code }
+	collectPhone(){  }	
+class CreditCard extends PartialPayment
+	processPayment(){  code }
+	
+class DebitCard extends PartialPayment
+	processPayment(){  code }
+		
+class Cypto extends PartialPayment
+	processPayment(){  code }
+	
+class payPal extends PartialPayment
+	processPayment(){  code }
+	
+
+
 
 
 

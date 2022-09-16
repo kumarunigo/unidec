@@ -1,6 +1,13 @@
 package inheritance;
 // multiple inheritance is blocked = Due to diamond problem
-public class Child extends Parent { // 3 global variable, 3 mmethods
+public class Child extends Parent  { // 3 global variable, 3 mmethods
+	
+	
+	
+	
+	
+	
+	
 	int b=20;
 	int abcd=20;
 	public int sub( int t, int u) {

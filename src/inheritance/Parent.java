@@ -1,5 +1,11 @@
 package inheritance;
 public class Parent extends GrandParent{ // 2 global variable, 2 methods
+	public void job() {
+		System.out.println("engineer");
+	}
+	
+	
+	
 	int a=10;
 	int abcd=10;
 	public int add( int r, int s) { // input variables
