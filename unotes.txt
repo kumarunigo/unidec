@@ -564,7 +564,38 @@ class payPal extends PartialPayment
 	processPayment(){  code }
 	
 
+registered userid =" john"
+registered pass	=John1!
 
+login userid ="john"
+login pass	= john123
+
+equals = regpwd and loginpwd
+equalsIgnoreCase = reguserid and loginuserid
+
+1234567890
+number.replaceAll("1","9") 9234567890
+1234567890
+1234567890
+1234567890
+number.substring(0,3); // 123
+
+number.replaceAll(" ","").replaceAll("-","").replaceAll(")","").replaceAll("(","")
+
+asdsa@gmail.com
+asdasdas@gmail.com
+
+
+Car c=new Car();
+Car c=new Nissan(); // assignment operator : RHS can be concrete Child of LHS
+
+
+
+String fullName="john doe newyork";
+String[] splitValues=fullName.split(" ");
+	john
+	doe
+	newyork
 
 
 
