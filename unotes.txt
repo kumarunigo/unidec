@@ -600,3 +600,69 @@ String[] splitValues=fullName.split(" ");
 
 
 
+********************* Exception handling *****************
+
+1) customer : 
+	Upon program failure/crash, rather than tech error message provide easy to understand 
+		error message to customers
+		diffferent error message for each failures
+			
+2) developer :
+	you can pin point exact program name, method name, line number
+	also reason for failure
+try{
+	// atm card is damaged
+	// atm pin entered is wrong
+	// atm card is blocked
+	// insufficient fund when trying to withdraw money
+}
+catch(CardDamagedException e){
+	sysout("please dial 1800 , request for new card");	
+}
+catch(invlidpinexception e){
+	sysout("please enter valid pin");	
+}
+catch(CardBlocked e){
+	sysout("please dial 1800123123 , unblock your card");	
+}
+catch(insucificientFund e){
+	sysout("please withdraw amount lower than your balance");	
+}
+
+try{ // trial mode
+	Programming line that we suspect might fail
+	customer using atm software
+}
+catch{ // safety net.. self help
+	actions to be taken in the event of failure
+	please order new card.. your card is damaged and cannot be read
+}
+finally{
+	guaranteed execution block
+}	
+	
+try-catch
+try-catch-catch
+try-catch-finally
+try-finally
+
+multiple catch blocks ORDER
+
+stack trace
+java.lang.ArithmeticException: / by zero ********WHAT IS THE PROBLEM********
+	at Method3.test5(Method3.java:26) ********WHERE IS THE PROBLEM********
+	at Method3.test4(Method3.java:22)
+	at Method3.test3(Method3.java:17)
+	at Method3.test2(Method3.java:13)
+	at Method3.test(Method3.java:8)
+	at ExceptionTest.main(ExceptionTest.java:16) ********WHERE IT BEGAN********
+
+
+compiletime-checked/runtime exception
+
+Throws : compile time exception should be handled in code before run/execution of program
+	the method can choose to handle by try/catch or "throws" to let caller handle that.
+
+NullPointerException
+
+User-Defined Exception
