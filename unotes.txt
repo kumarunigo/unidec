@@ -666,3 +666,36 @@ Throws : compile time exception should be handled in code before run/execution o
 NullPointerException
 
 User-Defined Exception
+
+
+
+************************* collection *********************
+
+
+Array : fixed size group
+collection : dynamic size group
+
+
+collections
+	list : indexed, ordered, duplicates
+		arraylist : fastest for reading
+		vector : synchronized (thread safe)
+		linked list : good for editing ( insert/delete)
+	set : unique, not indexed 
+		hashset : unordered
+		linkedhashset : ordered
+		treeset : sorted
+	map : pair of value
+	
+	
+add("john"); // john will be addded in the end of the list
+add(2,"john"); // john will be inserted in position 2... all items below this will move 1 step down
+set(3,"john"); // update the index 3 with new value john
+
+comparable interface
+hashcode and equals method
+
+	
+	
+	
+	
